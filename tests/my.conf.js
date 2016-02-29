@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Tue Sep 01 2015 19:36:46 GMT+0000 (UTC)
+// Generated on Mon Feb 29 2016 22:35:54 GMT+0000 (UTC)
 
 module.exports = function(config) {
   config.set({
@@ -22,7 +22,7 @@ module.exports = function(config) {
     ],
 
 
-    // list of files to excludE
+    // list of files to exclude
     exclude: [
     ],
 
@@ -58,11 +58,15 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    // Use the PhantomJS browser instead of Chrome
     browsers: ['PhantomJS'],
-
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: false,
+
+    // Concurrency level
+    // how many browser should be started simultaneous
+    concurrency: Infinity
   })
 }
