@@ -51,5 +51,5 @@ angular.module('SSFAlerts', [])
             navigator.notification.confirm(body, confirmCallback, title);
             return defer.promise;
         };
-    }
+    };
 }]);
