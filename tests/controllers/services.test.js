@@ -12,7 +12,8 @@ describe('Services', function(){
     // tests start here
     it('array should show unsorted numbers', function(){
         var unsortedArray = [12, 3, 9];
+        var sortedArray = [3, 9, 12];
         var sorted = sortServicesObject.sortArray(unsortedArray);
-        expect(unsortedArray).toEqual(sorted);
+        expect(unsortedArray).toEqual(sortedArray);
     });
 });
