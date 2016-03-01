@@ -15,7 +15,7 @@ describe('Services', function(){
     }));
     
     // tests start here
-    it('should have a title with value of Login', function(){
-        expect(scope.array).toEqual([12, 3, 9]);
+    it('array should show unsorted numbers', function(){
+        expected(unsortedArray).toEqual([12, 3, 9]);
     });
 });
