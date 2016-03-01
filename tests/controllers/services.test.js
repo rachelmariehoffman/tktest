@@ -5,13 +5,14 @@ describe('Services', function(){
     beforeEach(module('SortModule'));
     
     //Inject the scope and save it in a variable
-    beforeEach(inject(function(sortServices) {
-        sortServicesObject = sortServices;
+    beforeEach(inject(function(SortServices) {
+        sortServicesObject = SortServices;
     }));
     
     // tests start here
     it('array should show unsorted numbers', function(){
         var unsortedArray = [12, 3, 9];
-        expected(unsortedArray).toEqual([12, 3, 9]);
+        var sorted = sortServicesObject.sortArray(unsortedArray);
+        expected(unsortedArray).toEqual(sorted);
     });
 });
