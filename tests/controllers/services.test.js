@@ -1,21 +1,17 @@
 describe('Services', function(){
-    var scope;
+    var sortServiceObject;
     
-    // load the controller's module
-    beforeEach(module('ionic'));
-    beforeEach(module('starter.controllers'));
-    beforeEach(module('RESTConnection'));
-    beforeEach(module('SSFAlerts'));
+    // load the service's module
     beforeEach(module('Sort'));
     
     //Inject the scope and save it in a variable
-    beforeEach(inject(function($rootScope, service) {
-        scope = $rootScope.$new();
-        $service('SortServices', {$scope: scope});
+    beforeEach(inject(function(sortServices) {
+        sortServiceObject=SortServices;
     }));
     
     // tests start here
     it('array should show unsorted numbers', function(){
+        var unsortedArray = [12, 3, 9];
         expected(unsortedArray).toEqual([12, 3, 9]);
     });
 });
