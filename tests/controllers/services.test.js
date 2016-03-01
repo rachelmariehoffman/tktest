@@ -13,6 +13,6 @@ describe('Services', function(){
     it('array should show unsorted numbers', function(){
         var unsortedArray = [12, 3, 9];
         var sorted = sortServicesObject.sortArray(unsortedArray);
-        expected(unsortedArray).toEqual(sorted);
+        expect(unsortedArray).toEqual(sorted);
     });
 });
