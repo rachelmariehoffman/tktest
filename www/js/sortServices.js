@@ -4,7 +4,6 @@ angular.module('SortModule', [])
 
     service.sortArray = function(testArray) {
         
-        var counter = 0;
         var repeat = false;
         do {
             repeat = false;
@@ -15,11 +14,10 @@ angular.module('SortModule', [])
                     testArray[i] = temp2;
                     testArray[i++] = temp;
                     repeat = true;
-                    counter++;
                 }
             }
         } while (repeat);
-            return {testArray, counter};
+            return testArray;
     };
 }]);
 
