@@ -1,4 +1,4 @@
-angular.module('Sort', [])
+angular.module('SortModule', [])
 .service('SortServices', [function () {
     var service = this;
 

@@ -1,12 +1,12 @@
 describe('Services', function(){
-    var sortServiceObject;
+    var sortServicesObject;
     
     // load the service's module
-    beforeEach(module('Sort'));
+    beforeEach(module('SortModule'));
     
     //Inject the scope and save it in a variable
     beforeEach(inject(function(sortServices) {
-        sortServiceObject=SortServices;
+        sortServicesObject = sortServices;
     }));
     
     // tests start here
