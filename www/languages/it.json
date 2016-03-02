@@ -1,0 +1,68 @@
+{
+    "GENERAL": {
+      "LOGIN": "Accesso",
+      "EMAIL": "E-mail",
+      "PASSWORD": "Parola d'ordine",
+      "ERROR": "Errore"
+    },
+    "HISTORY": {
+        "VIEW_TITLE": "I miei risultati",
+        "TEST": "Test"
+    },
+    "LANDING": {
+        "VIEW_TITLE": "T.K. Test",
+        "LOGIN": "@:GENERAL.LOGIN",
+        "REGISTER": "Registro"
+    },
+    "LOBBY": {
+        "VIEW_TITLE": "Menu",
+        "TAKE_TEST": "Fare test",
+        "MY_RESULTS": "I miei risultati"
+    },
+    "LOGIN": {
+        "VIEW_TITLE": "@:GENERAL.LOGIN",
+        "EMAIL": "@:GENERAL.EMAIL",
+        "PASSWORD": "@:GENERAL.PASSWORD",
+        "REMEMBER_ME": "Ricordati di me?",
+        "LOGIN": "@:GENERAL.LOGIN"
+    },
+    "QUESTION": {
+        "OPTION_A": "Opzione A",
+        "OPTION_B": "Opzione B",
+        "A": "A",
+        "B": "B"
+    },
+    "REGISTER": {
+        "VIEW_TITLE": "Registro",
+        "EMAIL": "@:GENERAL.EMAIL",
+        "FIRST_NAME": "Nome",
+        "LAST_NAME": "Cognome",
+        "COMPANY": "Compagnia (Opzionale)",
+        "PASSWORD": "@:GENERAL.PASSWORD",
+        "REPEAT_PASSWORD": "Ripeti la parola d'ordine",
+        "SIGN_UP": "Registrazione"
+    },
+    "RESULTS": {
+        "VIEW_TITLE": "Risultati",
+        "MENU": "Menu",
+        "RESULTS": "Risultati"
+    },
+    "ERROR": {
+        "ERROR_TITLE": "@:GENERAL.ERROR",
+        "PASSWORD_ERROR": "Oops le password dont corrispondere :( Prova di nuovo!",
+        "INVALID_ERROR": "Qualcosa è andato storto, riprovare.",
+        "REGISTERED_ERROR": "E-mail e la password sono già registrati.",
+        "CONNECTION_ERROR": "La connessione con il server non ha avuto successo, controllare la connessione a Internet e riprovare più tardi.",
+        "INCORRECT_ERROR": "Nome utente o password errati.",
+        "LOGOUT_ERROR": "Impossibile il logout in questo momento, riprovare.",
+        "ANSWER_SAVED_ERROR": "Le risposte non possono essere salvate in questo momento, vuoi riprovare?",
+        "TEST_RETRIEVED_ERROR": "I test non possono essere recuperati in questo momento, vuoi riprovare?"
+    },
+    "ANSWERS": {
+        "COMPETING": "Competere",
+        "COLLABORATING": "Collaborare",
+        "COMPROMISING": "Compromettere",
+        "AVOIDING": "Evitando",
+        "ACCOMMODATING": "Accomodante"
+    }
+}

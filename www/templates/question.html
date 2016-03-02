@@ -2,7 +2,7 @@
   <ion-content class="padding">
     <div class="card">
       <div class="item item-divider">
-        Option A
+        {{ 'QUESTION.OPTION_A' | translate }}
       </div>
       <div class="item item-text-wrap">
         {{questionA.Text}}
@@ -10,7 +10,7 @@
     </div>  
     <div class="card">
       <div class="item item-divider">
-        Option B
+        {{ 'QUESTION.OPTION_B' | translate }}
       </div>
       <div class="item item-text-wrap">
         {{questionB.Text}}
@@ -19,12 +19,12 @@
     <div class="row">
         <div class="col">
             <button class="button button-block button-positive" ng-click="buttonClicked('A')">
-              A
+              {{ 'QUESTION.A' | translate }}
             </button>
         </div>
         <div class="col">
             <button class="button button-block button-positive" ng-click="buttonClicked('B')">
-              B
+              {{ 'QUESTION.B' | translate }}
             </button>
         </div>
     </div>

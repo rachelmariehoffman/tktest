@@ -1,0 +1,68 @@
+{   
+    "GENERAL": {
+      "LOGIN": "Iniciar sesión",
+      "EMAIL": "Correo electrónico",
+      "PASSWORD": "Contraseña",
+      "ERROR": "Error"
+    },
+    "HISTORY": {
+        "VIEW_TITLE": "Mis Resultados",
+        "TEST": "Prueba"
+    },
+    "LANDING": {
+        "VIEW_TITLE": "Prueba T.K.",
+        "LOGIN": "@:GENERAL.LOGIN",
+        "REGISTER": "Registro"
+    },
+    "LOBBY": {
+        "VIEW_TITLE": "Menú",
+        "TAKE_TEST": "Toma de prueba",
+        "MY_RESULTS": "Mis resultados"
+    },
+    "LOGIN": {
+        "VIEW_TITLE": "@:GENERAL.LOGIN",
+        "EMAIL": "@:GENERAL.EMAIL",
+        "PASSWORD": "@:GENERAL.PASSWORD",
+        "REMEMBER_ME": "¿Recuérdame?",
+        "LOGIN": "@:GENERAL.LOGIN"
+    },
+    "QUESTION": {
+        "OPTION_A": "Opción A",
+        "OPTION_B": "Opción B",
+        "A": "A",
+        "B": "B"
+    },
+    "REGISTER": {
+        "VIEW_TITLE": "Registro",
+        "EMAIL": "@:GENERAL.LOGIN",
+        "FIRST_NAME": "Nombre de pila",
+        "LAST_NAME": "Apellido",
+        "COMPANY": "Empresa (Opcional)",
+        "PASSWORD": "@:GENERAL.PASSWORD",
+        "REPEAT_PASSWORD": "Repetir contraseña",
+        "SIGN_UP": "Regístrate"
+    },
+    "RESULTS": {
+        "VIEW_TITLE": "Resultados",
+        "MENU": "Menú",
+        "RESULTS": "Resultados"
+    },
+    "ERROR": {
+        "ERROR_TITLE": "@:GENERAL.ERROR",
+        "PASSWORD_ERROR": "Vaya las contraseñas dont partido :( ¡Inténtalo de nuevo!",
+        "INVALID_ERROR": "Algo salió mal, inténtelo de nuevo.",
+        "REGISTERED_ERROR": "Correo electrónico y la contraseña ya están registrados.",
+        "CONNECTION_ERROR": "La conexión con el servidor se realiza correctamente, compruebe su conexión a Internet y vuelve a intentarlo más tarde.",
+        "INCORRECT_ERROR": "Nombre de usuario o contraseña incorrecta.",
+        "LOGOUT_ERROR": "No se pudo cerrar la sesión en este momento, inténtelo de nuevo.",
+        "ANSWER_SAVED_ERROR": "Las respuestas no podrían salvarse por el momento, ¿quieres intentarlo de nuevo?",
+        "TEST_RETRIEVED_ERROR": "Las pruebas no pudieron ser recuperados por el momento, ¿quieres intentarlo de nuevo?"
+    },
+    "ANSWERS": {
+        "COMPETING": "Compitiendo",
+        "COLLABORATING": "Colaborando",
+        "COMPROMISING": "Comprometiendo",
+        "AVOIDING": "Evitando",
+        "ACCOMMODATING": "Evitando"
+    }
+}

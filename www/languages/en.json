@@ -1,0 +1,68 @@
+{
+    "GENERAL": {
+      "LOGIN": "Login",
+      "EMAIL": "Email",
+      "PASSWORD": "Password",
+      "ERROR": "Error"
+    },
+    "HISTORY": {
+        "VIEW_TITLE": "My Results",
+        "TEST": "Test"
+    },
+    "LANDING": {
+        "VIEW_TITLE": "T.K. Test",
+        "LOGIN": "@:GENERAL.LOGIN",
+        "REGISTER": "Register"
+    },
+    "LOBBY": {
+        "VIEW_TITLE": "Menu",
+        "TAKE_TEST": "Take Test",
+        "MY_RESULTS": "My Results"
+    },
+    "LOGIN": {
+        "VIEW_TITLE": "@:GENERAL.LOGIN",
+        "EMAIL": "@:GENERAL.EMAIL",
+        "PASSWORD": "@:GENERAL.PASSWORD",
+        "REMEMBER_ME": "Remember Me?",
+        "LOGIN": "@:GENERAL.LOGIN"
+    },
+    "QUESTION": {
+        "OPTION_A": "Option A",
+        "OPTION_B": "Option B",
+        "A": "A",
+        "B": "B"
+    },
+    "REGISTER": {
+        "VIEW_TITLE": "Register",
+        "EMAIL": "@:GENERAL.EMAIL",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "COMPANY": "Company (Optional)",
+        "PASSWORD": "@:GENERAL.PASSWORD",
+        "REPEAT_PASSWORD": "Repeat password",
+        "SIGN_UP": "Sign up"
+    },
+    "RESULTS": {
+        "VIEW_TITLE": "Results",
+        "MENU": "Menu",
+        "RESULTS": "Results"
+    },
+    "ERROR": {
+        "ERROR_TITLE": "@:GENERAL.ERROR",
+        "PASSWORD_ERROR": "Oops the passwords dont match :( Try again!",
+        "INVALID_ERROR": "Something went wrong, try again.",
+        "REGISTERED_ERROR": "Email and password are already registered.",
+        "CONNECTION_ERROR": "The connection with the server was unsuccessful, check your internet connection and try again later.",
+        "INCORRECT_ERROR": "Incorrect username or password.",
+        "LOGOUT_ERROR": "Could not logout at this moment, try again.",
+        "ANSWER_SAVED_ERROR": "The answers could not be saved at the moment, do you want to try again?",
+        "TEST_RETRIEVED_ERROR": "The tests could not be retrieved at the moment, do you want to try again?"
+    },
+    "ANSWERS": {
+        "COMPETING": "Competing",
+        "COLLABORATING": "Collaborating",
+        "COMPROMISING": "Compromising",
+        "AVOIDING": "Avoiding",
+        "ACCOMMODATING": "Accomodating"
+    }
+}

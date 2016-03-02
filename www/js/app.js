@@ -1,27 +1,5 @@
-// Ionic Starter App
+angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TKServicesModule', 'chart.js', 'SSFAlerts', 'pascalprecht.translate'])
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TKServicesModule', 'chart.js', 'SSFAlerts'])
-
-.run(["$ionicPlatform", "$window", "$state", function($ionicPlatform, $window, $state) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-    
-    if($window.localStorage["userID"]!==undefined)
-    {
-        $state.go("lobby");
-    }
-  });
-}])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
@@ -71,6 +49,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
     controller: 'HistoryCtrl'
   });
 })
+
+
 .config(['$httpProvider', function($httpProvider) {
   $httpProvider.interceptors.push(function($rootScope) {
     return {
@@ -97,6 +77,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
     };
   });
 }])
+
+
+.config(function($translateProvider) {
+    $translateProvider
+    //Load languages files from path
+    .registerAvailableLanguageKeys(['en', 'es', 'it'], {
+      'en_*': 'en',
+      'es_*': 'es',
+      'it_*': 'it'
+    })
+    .useStaticFilesLoader({
+      prefix: 'languages/',
+      suffix: '.json'
+    })
+    .preferredLanguage('it');
+    //.determinePreferredLanguage();
+})
+
+
 .run(["$rootScope", "$ionicLoading", function($rootScope, $ionicLoading) {
   $rootScope.$on('loading:show', function() {
     $ionicLoading.show({
@@ -108,6 +107,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
     $ionicLoading.hide();
   });
 }])
+
+
 .run(["$rootScope", "$ionicHistory", "$state", "$window", function($rootScope, $ionicHistory, $state, $window) {
   $rootScope.$on('request:auth', function() {
     $ionicHistory.nextViewOptions({
@@ -118,6 +119,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
     delete $window.localStorage['userID'];
     $state.go('landing');
   });  
+}])
+
+
+.run(["$ionicPlatform", "$window", "$state", function($ionicPlatform, $window, $state) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+    
+    if($window.localStorage["userID"]!==undefined){
+      $ionicHistory.nextViewOptions({
+          historyRoot: true,
+          disableBack: true
+      });
+      $state.go("lobby");
+    }
+  });
 }]);
-
-
