@@ -91,7 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
       prefix: 'languages/',
       suffix: '.json'
     })
-    .preferredLanguage('it');
+    .preferredLanguage('en');
     //.determinePreferredLanguage();
 })
 
