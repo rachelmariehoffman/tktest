@@ -134,8 +134,7 @@ angular.module('starter.controllers', [])
     }
 ])
 
-.controller('LobbyCtrl', ['$scope', '$state', '$ionicHistory', 'UserService',
-    '$window', 'TKQuestionsService', 'ServerQuestionService', 'TKAnswersService', 'SSFAlertsService', '$translate',
+.controller('LobbyCtrl', ['$scope', '$state', '$ionicHistory', 'UserService', '$window', 'TKQuestionsService', 'ServerQuestionService', 'TKAnswersService', 'SSFAlertsService', '$translate',
     function($scope, $state, $ionicHistory, UserService, $window, TKQuestionsService, ServerQuestionService, TKAnswersService, SSFAlertsService, $translate) {
 
         /*needs the logout function to be added to documentation
@@ -219,10 +218,8 @@ angular.module('starter.controllers', [])
     }
 ])
 
-.controller('TestCtrl', ['$scope', 'testInfo', '$stateParams', '$state', '$window', 'TKQuestionsService', 'TKAnswersService', 
-    'ServerAnswersService', '$ionicHistory', 'TKResultsButtonService', 'SSFAlertsService', '$translate', '$filter',
-    function($scope, testInfo, $stateParams, $state, $window, TKQuestionsService,
-        TKAnswersService, ServerAnswersService, $ionicHistory, TKResultsButtonService, SSFAlertsService, $translate) {
+.controller('TestCtrl', ['$scope', 'testInfo', '$stateParams', '$state', '$window', 'TKQuestionsService', 'TKAnswersService', 'ServerAnswersService', '$ionicHistory', 'TKResultsButtonService', 'SSFAlertsService', '$translate', '$filter',
+    function($scope, testInfo, $stateParams, $state, $window, TKQuestionsService, TKAnswersService, ServerAnswersService, $ionicHistory, TKResultsButtonService, SSFAlertsService, $translate) {
         //testInfo is passed in the router to obtain the questions
         var qNumber = $stateParams.testID;
         $scope.title = "Question #" + qNumber;
@@ -365,12 +362,17 @@ angular.module('starter.controllers', [])
     }
 ])
 
-.controller('HistoryCtrl', ['$scope', 'ServerAnswersService', '$window', '$state', 'TKAnswersService', 'TKResultsButtonService', 'SSFAlertsService', '$translate',
-    function($scope, ServerAnswersService, $window, $state, TKAnswersService, TKResultsButtonService, SSFAlertsService, $translate) {
+.controller('HistoryCtrl', ['$scope', 'ServerAnswersService', '$window', '$state', 'TKAnswersService', 'TKResultsButtonService', 'SSFAlertsService', '$translate', 'tmhDynamicLocale',
+    function($scope, ServerAnswersService, $window, $state, TKAnswersService, TKResultsButtonService, SSFAlertsService, $translate, tmhDynamicLocale) {
         $scope.tests = [];
-
         performRequest();
-
+        
+        if(typeof navigator.globalization !== "undefined") {
+            navigator.globalization.getPreferredLanguage(function(language) {
+                tmhDynamicLocale.set((language.value).split("-")[0]);
+            }, null);
+        }
+        
         function performRequest() {
             ServerAnswersService.all($window.localStorage['userID'], $window.localStorage['token'])
             .then(function(response) {

@@ -1,4 +1,5 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TKServicesModule', 'chart.js', 'SSFAlerts', 'pascalprecht.translate'])
+angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TKServicesModule', 
+'chart.js', 'SSFAlerts', 'pascalprecht.translate', 'tmh.dynamicLocale'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -79,6 +80,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
 }])
 
 
+.config(function(tmhDynamicLocaleProvider) {
+  tmhDynamicLocaleProvider.localeLocationPattern("lib/angular-locale/angular-locale_{{locale}}.js");
+})
+
+
 .config(function($translateProvider) {
     $translateProvider
     //Load languages files from path
@@ -91,8 +97,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
       prefix: 'languages/',
       suffix: '.json'
     })
-    .preferredLanguage('en');
-    //.determinePreferredLanguage();
+    .preferredLanguage('it')
+    .determinePreferredLanguage();
 })
 
 
@@ -134,10 +140,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
     }
     
     if($window.localStorage["userID"]!==undefined){
+      /*
       $ionicHistory.nextViewOptions({
           historyRoot: true,
           disableBack: true
       });
+      */
       $state.go("lobby");
     }
   });
