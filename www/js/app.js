@@ -140,12 +140,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
     }
     
     if($window.localStorage["userID"]!==undefined){
-      /*
       $ionicHistory.nextViewOptions({
           historyRoot: true,
           disableBack: true
       });
-      */
       $state.go("lobby");
     }
   });
