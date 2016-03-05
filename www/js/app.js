@@ -1,6 +1,5 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TKServicesModule', 
+angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.analytics', 'starter.controllers', 'RESTConnection', 'TKServicesModule', 
 'chart.js', 'SSFAlerts', 'pascalprecht.translate', 'tmh.dynamicLocale'])
-
 
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
@@ -51,7 +50,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   });
 })
 
-
 .config(['$httpProvider', function($httpProvider) {
   $httpProvider.interceptors.push(function($rootScope) {
     return {
@@ -79,11 +77,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   });
 }])
 
-
 .config(function(tmhDynamicLocaleProvider) {
   tmhDynamicLocaleProvider.localeLocationPattern("lib/angular-locale/angular-locale_{{locale}}.js");
 })
-
 
 .config(function($translateProvider) {
     $translateProvider
@@ -101,6 +97,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
     .determinePreferredLanguage();
 })
 
+.config(['$ionicAutoTrackProvider', function($ionicAutoTrackProvider) {
+  // Don't track which elements the user clicks on.
+  $ionicAutoTrackProvider.disableTracking('Tap');
+}])
 
 .run(["$rootScope", "$ionicLoading", function($rootScope, $ionicLoading) {
   $rootScope.$on('loading:show', function() {
@@ -114,31 +114,50 @@ angular.module('starter', ['ionic', 'starter.controllers', 'RESTConnection', 'TK
   });
 }])
 
-
 .run(["$rootScope", "$ionicHistory", "$state", "$window", function($rootScope, $ionicHistory, $state, $window) {
   $rootScope.$on('request:auth', function() {
     $ionicHistory.nextViewOptions({
       historyRoot: true,
       disableBack: true
     });
+    
+    var deploy = new Ionic.Deploy();
+    deploy.setChannel("dev");
+    deploy.check().then(function(hasUpdate) {
+      console.log('Ionic Deploy: Update available: ' + hasUpdate);
+      if(hasUpdate) {
+        //Perform update
+        deploy.update().then(function(res) {
+          //App will automatically reload when updated successfully
+           console.log('Ionic Deploy: Update Success! ', res);
+        }, function(err) {
+          console.log('Ionic Deploy: Update error! ', err);
+        }, function(prog) {
+           console.log('Ionic Deploy: Progress... ', prog);
+        });
+      }
+    }, function(err) {
+      console.error('Ionic Deploy: Unable to check for updates', err);
+    });
+    
     delete $window.localStorage['token'];
     delete $window.localStorage['userID'];
     $state.go('landing');
   });  
 }])
 
-
-.run(["$ionicPlatform", "$window", "$state", function($ionicPlatform, $window, $state) {
+.run(["$ionicPlatform", "$ionicAnalytics", "$window", "$state", function($ionicPlatform, $ionicAnalytics, $window, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+    Ionic.io();
+      $ionicAnalytics.register();
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-    
     if($window.localStorage["userID"]!==undefined){
       $ionicHistory.nextViewOptions({
           historyRoot: true,
